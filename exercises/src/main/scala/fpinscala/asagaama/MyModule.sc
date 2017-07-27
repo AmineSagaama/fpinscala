@@ -3,18 +3,13 @@
 /** A documentation comment */
 object MyModule {
   def main(args: Array[String]): Unit =
-    println(formatAbs(-22))
+    println(formatResult("absolute value", -3, abs))
 
-  println(factorial(5))
+  println(formatResult("factorial of", 5, factorial))
 
-  private def formatAbs(x: Int) = {
-    val msg = "The absolute path of %d is %d"
-    msg.format(x, abs(x))
-  }
-
-  private def formatFactorial(n: Int) = {
-    val msg = "The factorial of %d is %d"
-    msg.format(n, factorial(n))
+  private def formatResult(name: String, n: Int, f: Int => Int) = {
+    val msg = "The %s path of %d is %d"
+    msg.format(name, f(n))
   }
 
   def abs(n: Int): Int =

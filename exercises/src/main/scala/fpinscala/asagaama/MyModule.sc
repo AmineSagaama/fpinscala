@@ -5,9 +5,16 @@ object MyModule {
   def main(args: Array[String]): Unit =
     println(formatAbs(-22))
 
+  println(factorial(5))
+
   private def formatAbs(x: Int) = {
     val msg = "The absolute path of %d is %d"
     msg.format(x, abs(x))
+  }
+
+  private def formatFactorial(n: Int) = {
+    val msg = "The factorial of %d is %d"
+    msg.format(n, factorial(n))
   }
 
   def abs(n: Int): Int =
